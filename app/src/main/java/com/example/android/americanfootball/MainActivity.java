@@ -8,14 +8,14 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
-    static final String stateTeamAScore = "scoreTeamA";
-    static final String stateTeamBScore = "scoreTeamB";
+   private  static final String stateTeamAScore = "scoreTeamA";
+   private  static final String stateTeamBScore = "scoreTeamB";
 
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
-    TextView scoreViewA;
-    TextView scoreViewB;
+    TextView ScoreViewA;
+    TextView ScoreViewB;
 
     /**
      * Use onSaveInstanceState(Bundle).
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView scoreViewA = findViewById(R.id.team_a_score);
-        TextView scoreViewB = findViewById(R.id.team_b_score);
+       ScoreViewA = (TextView)findViewById(R.id.team_a_score);
+       ScoreViewB = (TextView)findViewById(R.id.team_b_score);
 
         Button b1 = findViewById(R.id.touch_a);
         b1.setOnClickListener(this);
@@ -125,14 +125,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
              * Displays the given score for Team A.
              */
             public void displayForTeamA(int score) {
-                scoreViewA.setText(String.valueOf(score));
+                ScoreViewA.setText(String.valueOf(score));
             }
 
             /**
              * Displays the given score for Team B.
              */
             public void displayForTeamB(int score) {
-                scoreViewB.setText(String.valueOf(score));
+                ScoreViewB.setText(String.valueOf(score));
             }
 
             /**
